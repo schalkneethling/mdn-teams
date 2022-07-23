@@ -5,7 +5,8 @@
   "exports": "./server.js",
   "type": "module",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "dev": "vercel dev"
   },
   "keywords": [],
   "author": "",
