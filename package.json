@@ -2,7 +2,7 @@
   "name": "mdn-contributors",
   "version": "1.0.0",
   "description": "",
-  "exports": "./server.js",
+  "exports": "./index.js",
   "type": "module",
   "scripts": {
     "start": "node index.js",
