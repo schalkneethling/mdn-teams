@@ -1,0 +1,21 @@
+{
+  "name": "mdn-contributors",
+  "version": "1.0.0",
+  "description": "",
+  "exports": "./server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@octokit/core": "^4.0.4",
+    "@octokit/plugin-rest-endpoint-methods": "^6.1.2",
+    "dotenv": "^16.0.1"
+  },
+  "devDependencies": {
+    "vercel": "^27.2.0"
+  }
+}
