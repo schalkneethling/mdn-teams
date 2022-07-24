@@ -6,20 +6,6 @@
 
   const mainMenu = document.getElementById("main-menu");
 
-  if (mainMenu) {
-    mainMenu.addEventListener("click", (event) => {
-      event.preventDefault();
-
-      if (event.target.id === "show-teams") {
-        showTeams();
-      }
-
-      if (event.target.id === "show-members") {
-        showMembers();
-      }
-    });
-  }
-
   function getEmptyContainer() {
     const output = document.getElementById("output");
     output.innerHTML = "";
@@ -70,5 +56,17 @@
     }
   }
 
-  showMembers();
+  if (mainMenu) {
+    mainMenu.addEventListener("click", (event) => {
+      event.preventDefault();
+
+      if (event.target.id === "show-teams") {
+        showTeams();
+      }
+
+      if (event.target.id === "show-members") {
+        showMembers();
+      }
+    });
+  }
 })();

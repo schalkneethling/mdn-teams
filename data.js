@@ -45,7 +45,7 @@ async function getMembers() {
 
 export async function getMemberDetails() {
   const membersResponse = await getMembers();
-  const members = membersResponse.map(async (member) => {
+  const members = membersResponse.map((member) => {
     return {
       avatar: member.avatar_url,
       login: member.login,
@@ -54,6 +54,7 @@ export async function getMemberDetails() {
       isSiteAdmin: member.site_admin,
     };
   });
+  console.log(members);
 
   return members;
 }
