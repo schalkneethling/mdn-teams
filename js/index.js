@@ -1,13 +1,60 @@
 (function () {
   "use strict";
+
   const MEMBER_URL =
     "https://mdn-teams-bveaw8vf5-schalkneethling.vercel.app/members";
+  const TEAMS_URL =
+    "https://mdn-teams-bveaw8vf5-schalkneethling.vercel.app/teams";
+
+  const mainMenu = document.getElementById("main-menu");
+
+  if (mainMenu) {
+    mainMenu.addEventListener("click", (event) => {
+      event.preventDefault();
+
+      if (event.target.id === "show-teams") {
+        showTeams();
+      }
+
+      if (event.target.id === "show-members") {
+        showMembers();
+      }
+    });
+  }
+
+  function getEmptyContainer() {
+    const output = document.getElementById("output");
+    output.innerHTML = "";
+    return output;
+  }
+
+  async function getData(url) {
+    const response = await fetch(url);
+    const data = await response.json();
+    return data;
+  }
+
+  async function showTeams() {
+    const teams = await getData(TEAMS_URL);
+    const output = getEmptyContainer();
+
+    for (const team of teams) {
+      const currentTeam = `
+        <li class="member">
+            <div class="member-header">
+                <h2><a href="${team.url}">${team.name}</a></h2>
+            </div>
+            <p>${team.description}</p>
+        </li>
+      `;
+      output.insertAdjacentHTML("beforeend", currentTeam);
+    }
+  }
 
   async function showMembers() {
-    const response = await fetch(MEMBER_URL);
-    const members = await response.json();
-    const membersList = document.getElementById("members");
-    membersList.innerHTML = "";
+    const members = await getData(MEMBER_URL);
+    const output = getEmptyContainer();
+
     for (const member of members) {
       const currentMember = `
         <li class="member">
@@ -21,7 +68,7 @@
             </ul>
         </li>
       `;
-      membersList.insertAdjacentHTML("beforeend", currentMember);
+      output.insertAdjacentHTML("beforeend", currentMember);
     }
   }
 

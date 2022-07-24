@@ -1,21 +1,21 @@
-.members-list {
+.response-list {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
   justify-content: space-between;
 }
 
-.members-list a:link,
-.members-list a:visited {
+.response-list a:link,
+.response-list a:visited {
   color: #fff;
 }
 
-.members-list a:focus,
-.members-list a:hover {
+.response-list a:focus,
+.response-list a:hover {
   text-decoration: none;
 }
 
-.members-list a:visited {
+.response-list a:visited {
   color: pink;
 }
 
