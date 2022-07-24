@@ -1,10 +1,8 @@
 (function () {
   "use strict";
 
-  const MEMBER_URL =
-    "https://mdn-teams-bveaw8vf5-schalkneethling.vercel.app/members";
-  const TEAMS_URL =
-    "https://mdn-teams-bveaw8vf5-schalkneethling.vercel.app/teams";
+  const MEMBER_URL = "https://mdn-teams.vercel.app/members";
+  const TEAMS_URL = "https://mdn-teams.vercel.app/teams";
 
   const mainMenu = document.getElementById("main-menu");
 
