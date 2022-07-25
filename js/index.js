@@ -24,11 +24,11 @@
 
     for (const team of teams) {
       const currentTeam = `
-        <li class="member">
-            <div class="member-header">
+        <li class="response">
+            <div class="response-header">
                 <h2><a href="${team.url}">${team.name}</a></h2>
             </div>
-            <p>${team.description}</p>
+            <p class="response-details">${team.description}</p>
         </li>
       `;
       output.insertAdjacentHTML("beforeend", currentTeam);
@@ -41,12 +41,12 @@
 
     for (const member of members) {
       const currentMember = `
-        <li class="member">
-            <div class="member-header">
+        <li class="response">
+            <div class="response-header">
                 <img src="${member.avatar}" alt="${member.login}" />
                 <h2><a href="${member.profile}">${member.login}</a></h2>
             </div>
-            <ul class="member-details">
+            <ul class="response-details">
                 <li>User type: ${member.userType}</li>
                 <li>Is admin: ${member.isSiteAdmin}</li>
             </ul>
